@@ -4,12 +4,12 @@
   }
   
   body {
+    background-color: #f8f9fa; /* Light background */
+    color: #333; /* Dark text */
     font-family: Arial, sans-serif;
-    max-width: 100ch;
-    margin-inline: auto;
-    padding-inline: max(1em, (100% - 100ch) / 2);
-    line-height: 1.6;
-    background-color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
   }
   
  /* Navigation Styles */
@@ -20,6 +20,7 @@ nav {
     padding: 1em;
     background-color: #f0f0f0;
     border-bottom: 2px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
   
   nav a {
@@ -38,175 +39,53 @@ nav {
   /* Highlight Current Page */
   nav a.current {
     font-weight: bold;
-    color: #4caf50;
-    border-bottom: 3px solid #4caf50;
+    color: #fe019a;
+    border-bottom: 3px solid #fe019a;
     padding-bottom: 0.3em;
   }
 
-  /* Typography */
-  h1 {
-    font-size: 4em;
-    text-align: center;
-    color: var(--color-accent);
-  }
-  
-  p {
-    font-size: 1.2em;
-    text-align: center;
-    margin-bottom: 2em;
-  }
-  
-  /* Contact Form */
-  form {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1em;
-    padding: 2em;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  
-  input, textarea, button {
-    font: inherit;
-    padding: 0.5em;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* 🌞 Light/Dark Mode Base */
-:root {
-    --background-color: #ffffff;
-    --text-color: #000000;
-    --nav-background: #f0f0f0;
-    --nav-link-color: #333;
-    --nav-current-color: #4caf50;
-    --nav-current-border: #4caf50;
-  }
-  
-  /* 🌙 Dark Mode */
-  [data-theme="dark"] {
-    --background-color: #1e1e1e;
-    --text-color: #e0e0e0;
-    --nav-background: #2e2e2e;
-    --nav-link-color: #e0e0e0;
-    --nav-current-color: #4caf50;
-    --nav-current-border: #4caf50;
-  }
-  
-  /* 🌓 Automatic (Based on OS) */
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --background-color: #1e1e1e;
-      --text-color: #e0e0e0;
-      --nav-background: #2e2e2e;
-      --nav-link-color: #e0e0e0;
-    }
-  }
-  
-  /* 🖥️ Global Styles */
-  body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: Arial, sans-serif;
-    padding: 2em;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  /* 📌 Navigation */
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 1.5em;
-    padding: 1em;
-    background-color: var(--nav-background);
-    border-bottom: 2px solid #ccc;
-    transition: background-color 0.3s;
-  }
-  
-  nav a {
-    text-decoration: none;
-    font-size: 1.2em;
-    color: var(--nav-link-color);
-    padding: 0.5em 1em;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  nav a:hover {
-    background-color: #ddd;
-    color: #000
-    border-radius: 5px;
-  }
-  
-  nav a.current {
-    font-weight: bold;
-    color: var(--nav-current-color);
-    border-bottom: 3px solid var(--nav-current-border);
-    padding-bottom: 0.3em;
-  }
-  
-  /* 🎨 Theme Switcher */
-  .color-scheme {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 0.9rem;
-    background-color: var(--nav-background);
-    padding: 0.5em;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 10;
-  }
-  
-  .color-scheme select {
-    font-size: 0.9rem;
-    padding: 0.3em;
-    border-radius: 5px;
-  }
-
-  img {
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  /* 🌟 Center Everything */
-body {
-    text-align: center;
-    font-family: Arial, sans-serif;
-}
-
-/* 🏠 Home Section */
+ /* 🏠 Home Page Styles */
 .home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
-/* 📸 Profile Picture */
 .home img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* 🖊 Name */
-.home h1 {
-    font-size: 2.5em;
-    margin: 15px 0;
+/* 🖊 Headings */
+h1 {
+  font-size: 2.5em;
+  color: #333;
 }
 
-/* ✍️ Short Description */
-.home p {
-    font-size: 1.2em;
-    color: gray;
-    max-width: 500px;
-    line-height: 1.5;
+h2 {
+  font-size: 2em;
+  color: #555;
 }
+
+/* ✍️ Paragraphs */
+p {
+  font-size: 1.2em;
+  color: #666;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+/* 🏠 Content Sections */
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  margin: 30px auto;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 
 /* 📩 Contact Form */
 .contact-form {
@@ -238,7 +117,7 @@ body {
 
 /* 📮 Submit Button */
 .contact-form button {
-  background: #007bff;
+  background: #fe019a;
   color: white;
   padding: 10px 15px;
   font-size: 1.1em;
@@ -250,5 +129,5 @@ body {
 }
 
 .contact-form button:hover {
-  background: #0056b3;
+  background: #fe019a;
 }
