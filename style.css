@@ -187,8 +187,8 @@ body {
 
 /* 📸 Profile Picture */
 .home img {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -206,4 +206,49 @@ body {
     color: gray;
     max-width: 500px;
     line-height: 1.5;
+}
+
+/* 📩 Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🏷 Form Labels */
+.contact-form label {
+  text-align: left;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* 🔤 Input Fields */
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* 📮 Submit Button */
+.contact-form button {
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #0056b3;
 }
