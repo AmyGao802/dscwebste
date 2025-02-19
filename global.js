@@ -6,14 +6,19 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
-// 🟡 Highlight Current Page
-let navLinks = $$("nav a");
-navLinks.forEach(link => {
-  if (link.pathname === window.location.pathname || 
-      (window.location.pathname === '/' && link.pathname === '/index.html')) {
-    link.classList.add('current');
-  }
-});
+// ✅ Select all navigation links
+let navLinks = document.querySelectorAll("nav a");
+
+// ✅ Find the current page link
+let currentLink = Array.from(navLinks).find(a =>
+    a.href.includes(window.location.pathname)
+);
+
+// ✅ Highlight the current page
+if (currentLink) {
+    currentLink.classList.add("current");
+}
+
 
 // 🟠 Add Dark Mode Switch
 document.body.insertAdjacentHTML('afterbegin', `
