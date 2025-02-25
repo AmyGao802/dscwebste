@@ -47,3 +47,27 @@ document.addEventListener("DOMContentLoaded", () => {
         applyTheme(this.value);
     });
 });
+// Fetch JSON data from a file
+export async function fetchJSON(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Failed to fetch data: ${response.statusText}`);
+        return await response.json();
+    } catch (error) {
+        console.error("❌ Error fetching JSON:", error);
+    }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = "h2") {
+    containerElement.innerHTML = ""; // Clear previous content
+
+    projects.forEach(project => {
+        const article = document.createElement("article");
+        article.innerHTML = `
+            <${headingLevel} class="project-title" data-title="${project.title}">${project.title} (${project.year})</${headingLevel}>
+            <img src="${project.image}" alt="${project.title}">
+            <p>${project.description}</p>
+        `;
+        containerElement.appendChild(article);
+    });
+}

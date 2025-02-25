@@ -205,3 +205,43 @@ p {
 .dark-mode li {
   color: white !important;
 }
+
+.hiddenquest-image {
+  width: 40%;  /* Adjust the size */
+  max-width: 500px;  /* Limit max width */
+  height: auto;  /* Keep aspect ratio */
+  display: block;  /* Ensures proper spacing */
+  margin: 20px auto;  /* Centers the image */
+  border-radius: 10px; /* Optional: Rounded edges */
+}
+
+.hidden {
+  display: none;
+}
+
+#project-details {
+  text-align: center;
+  padding: 20px;
+}
+
+#project-image {
+  width: 50%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+#back-to-projects {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#back-to-projects:hover {
+  background-color: #0056b3;
+}
