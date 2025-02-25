@@ -12,26 +12,38 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 🎨 Dark Mode Toggle
-    let darkModeToggle = document.querySelector("#戳我变色");
+    // 🎨 Dark Mode Toggle (Automatic, Light, Dark)
+    let themeToggle = document.querySelector("#themeToggle");
 
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
+    function applyTheme(mode) {
+        document.body.classList.remove("light-mode", "dark-mode");
 
-            // Store user preference in localStorage
-            if (document.body.classList.contains("dark-mode")) {
-                localStorage.setItem("theme", "dark");
-                console.log("🌙 Dark mode enabled");
+        if (mode === "dark") {
+            document.body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+            console.log("🌙 Dark mode enabled");
+        } else if (mode === "light") {
+            document.body.classList.add("light-mode");
+            localStorage.setItem("theme", "light");
+            console.log("☀️ Light mode enabled");
+        } else {
+            localStorage.setItem("theme", "auto");
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.body.classList.add("dark-mode");
+                console.log("🌙 Auto mode: OS is in Dark Mode");
             } else {
-                localStorage.setItem("theme", "light");
-                console.log("☀️ Light mode enabled");
+                console.log("☀️ Auto mode: OS is in Light Mode");
             }
-        });
+        }
     }
 
-    // ✅ Check for saved theme preference
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-    }
+    // Apply saved theme or default to auto
+    let savedTheme = localStorage.getItem("theme") || "auto";
+    themeToggle.value = savedTheme;
+    applyTheme(savedTheme);
+
+    // Change theme when user selects a new option
+    themeToggle.addEventListener("change", function () {
+        applyTheme(this.value);
+    });
 });

@@ -132,13 +132,13 @@ p {
   background: #fe019a;
 }
 
-/* 🌙 Dark Mode - Everything White */
+/* 🌙 Dark Mode */
 .dark-mode {
   background-color: #222;
-  color: white; /* Make all text white */
+  color: white !important; /* Ensures all text is white */
 }
 
-/* Dark Mode Navigation Bar */
+/* Dark Mode Navigation */
 .dark-mode nav {
   background-color: #333;
   border-bottom: 2px solid #444;
@@ -146,12 +146,12 @@ p {
 
 /* Dark Mode Navigation Links */
 .dark-mode nav a {
-  color: white !important;  /* Ensure links stay white */
-  background-color: transparent;  /* No background */
+  color: white !important; /* Ensures links are visible */
+  background-color: transparent;
 }
 
 .dark-mode nav a:hover {
-  color: #fe019a;  /* Gold hover effect */
+  color: #fe019a; /* Gold hover effect */
   background-color: #444;
 }
 
@@ -162,12 +162,12 @@ p {
 .dark-mode h4, 
 .dark-mode h5, 
 .dark-mode h6 {
-  color: white;
+  color: white !important; /* Ensures headings stay white */
 }
 
 /* Dark Mode Paragraphs */
 .dark-mode p {
-  color: white;
+  color: white !important;
 }
 
 /* Dark Mode Buttons */
@@ -198,10 +198,10 @@ p {
 /* Dark Mode Lists */
 .dark-mode ul, 
 .dark-mode ol {
-  color: white;
+  color: white !important;
 }
 
 /* Dark Mode List Items */
 .dark-mode li {
-  color: white;
+  color: white !important;
 }
