@@ -1,53 +1,37 @@
-// 💡 Console check
+
+// 🚀 Confirm JavaScript is running
 console.log('IT’S ALIVE!');
 
-// Helper function for selecting elements
-function $$(selector, context = document) {
-  return Array.from(context.querySelectorAll(selector));
-}
+// ✅ Highlight the current page in navigation
+document.addEventListener("DOMContentLoaded", () => {
+    let navLinks = document.querySelectorAll("nav a");
 
-// ✅ Select all navigation links
-let navLinks = document.querySelectorAll("nav a");
+    navLinks.forEach(link => {
+        if (link.href.includes(window.location.pathname)) {
+            link.classList.add("current");
+        }
+    });
 
-// ✅ Find the current page link
-let currentLink = Array.from(navLinks).find(a =>
-    a.href.includes(window.location.pathname)
-);
+    // 🎨 Dark Mode Toggle
+    let darkModeToggle = document.querySelector("#戳我变色");
 
-// ✅ Highlight the current page
-if (currentLink) {
-    currentLink.classList.add("current");
-}
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
 
+            // Store user preference in localStorage
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+                console.log("🌙 Dark mode enabled");
+            } else {
+                localStorage.setItem("theme", "light");
+                console.log("☀️ Light mode enabled");
+            }
+        });
+    }
 
-// 🟠 Add Dark Mode Switch
-document.body.insertAdjacentHTML('afterbegin', `
-  <label class="color-scheme">
-    Theme:
-    <select id="theme-select">
-      <option value="auto">Automatic</option>
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
-    </select>
-  </label>
-`);
-
-// 🟢 Function to set color scheme
-function setColorScheme(mode) {
-  document.documentElement.setAttribute('data-theme', mode);
-  localStorage.setItem('colorScheme', mode);
-}
-
-// Get theme selector and add event listener
-const select = document.getElementById('theme-select');
-select.value = localStorage.getItem('colorScheme') || 'auto';
-select.addEventListener('input', (e) => {
-  setColorScheme(e.target.value);
-});
-
-// 🟣 Apply saved theme on page load
-window.addEventListener('load', () => {
-  const saved = localStorage.getItem('colorScheme') || 'auto';
-  setColorScheme(saved);
-  select.value = saved;
+    // ✅ Check for saved theme preference
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
 });
