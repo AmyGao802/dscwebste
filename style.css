@@ -76,14 +76,15 @@ p {
   margin: 10px auto;
 }
 
-/* 🏠 Content Sections */
-.container {
-  background-color: #ffffff;
-  padding: 20px;
+/* 📌 Contact Form Container */
+.contact-form-container {
+  background-color: white;
+  padding: 30px;
   border-radius: 10px;
-  width: 50%;
-  margin: 30px auto;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  max-width: 500px; /* Keeps form centered */
+  margin: 50px auto; /* Center the form */
+  text-align: left; /* Align text properly */
 }
 
 
@@ -93,10 +94,10 @@ p {
   flex-direction: column;
   width: 50%;
   margin: 20px auto;
-  padding: 20px;
+  padding: 60px;
   background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* 🏷 Form Labels */
@@ -183,27 +184,42 @@ p {
 }
 
 /* Dark Mode Forms */
-.dark-mode input, 
+.dark-mode form {
+  background-color: #333; /* Dark background */
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode - Input Fields */
+.dark-mode input,
 .dark-mode textarea {
-  background-color: #333;
-  color: white;
-  border: 1px solid white;
+    background-color: #444; /* Slightly lighter background */
+    color: white; /* Ensure text is visible */
+    border: 1px solid #666; /* Add a light border */
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px; /* Rounded edges */
+    outline: none; /* Removes default browser outline */
 }
 
 .dark-mode input::placeholder, 
 .dark-mode textarea::placeholder {
-  color: #bbb; /* Light gray placeholder text */
+  color: ##bbb; /* Light gray placeholder text */
 }
 
-/* Dark Mode Lists */
-.dark-mode ul, 
-.dark-mode ol {
-  color: white !important;
+/* Dark Mode - Labels */
+.dark-mode label {
+  color: white; /* Ensure labels are readable */
 }
 
-/* Dark Mode List Items */
-.dark-mode li {
-  color: white !important;
+/* Dark Mode - Submit Button */
+.dark-mode button {
+  background-color: #fe019a;
+  color: white;
+  border: 0px solid white;
+  padding: 12px 20px;
+  cursor: pointer;
 }
 
 .hiddenquest-image {
@@ -230,18 +246,4 @@ p {
   height: auto;
   display: block;
   margin: 20px auto;
-}
-
-#back-to-projects {
-  display: block;
-  margin: 10px auto;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-#back-to-projects:hover {
-  background-color: #0056b3;
 }
